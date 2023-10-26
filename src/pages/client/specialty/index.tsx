@@ -1,5 +1,14 @@
+import { Banner, Footer } from '@/components';
 import { Box } from '@mui/system';
+import { Contact, SpecialtyList } from './section';
 
 export const Specialty = () => {
-  return <Box>Specialty</Box>;
+  return (
+    <Box>
+      <Banner />
+      <SpecialtyList />
+      <Contact />
+      <Footer />
+    </Box>
+  );
 };

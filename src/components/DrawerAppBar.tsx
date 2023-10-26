@@ -1,4 +1,6 @@
-import * as React from 'react';
+import { menus } from '@/utils/constants';
+import MenuIcon from '@mui/icons-material/Menu';
+import { Link as MuiLink } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -9,10 +11,10 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
-import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
+import * as React from 'react';
+import { Link } from 'react-router-dom';
 
 interface Props {
   /**
@@ -55,7 +57,7 @@ export default function DrawerAppBar(props: Props) {
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box>
       <CssBaseline />
       <AppBar component='nav'>
         <Toolbar>
@@ -72,10 +74,10 @@ export default function DrawerAppBar(props: Props) {
             MUI
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}>
-            {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff' }}>
-                {item}
-              </Button>
+            {menus.map((item) => (
+              <MuiLink component={Link} to={`/${item.path}`} key={item.path} color='#fff'>
+                {item.title}
+              </MuiLink>
             ))}
           </Box>
         </Toolbar>
@@ -97,7 +99,7 @@ export default function DrawerAppBar(props: Props) {
           {drawer}
         </Drawer>
       </nav>
-      <Box component='main' sx={{ p: 3 }}>
+      <Box component='main'>
         <Toolbar />
         {children}
       </Box>

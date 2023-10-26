@@ -1,10 +1,10 @@
 import { Container } from '@mui/material';
 import { Box } from '@mui/system';
 
-export const OutStadingSpecialty = () => {
+export const Hero = () => {
   return (
     <Box>
-      <Container maxWidth='xl'>OutStadingSpecialty</Container>
+      <Container maxWidth='xl'>Hero</Container>
     </Box>
   );
 };

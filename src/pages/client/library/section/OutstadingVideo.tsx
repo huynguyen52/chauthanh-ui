@@ -1,5 +1,10 @@
+import { Container } from '@mui/material';
 import { Box } from '@mui/system';
 
 export const OutstadingVideo = () => {
-  return <Box>OutstadingVideo</Box>;
+  return (
+    <Box>
+      <Container maxWidth='xl'>OutstadingVideo</Container>
+    </Box>
+  );
 };
