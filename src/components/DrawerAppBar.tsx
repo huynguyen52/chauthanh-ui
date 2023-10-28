@@ -12,9 +12,9 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import * as React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import logo from '@/assets/new_logo.svg';
 
 interface Props {
   /**
@@ -26,7 +26,27 @@ interface Props {
 }
 
 const drawerWidth = 240;
-const navItems = ['Home', 'About', 'Contact'];
+const CustomNavlink = React.forwardRef(
+  (
+    props: {
+      className: string;
+      activeClassName: string;
+      to: string;
+      children?: React.ReactNode;
+    },
+    ref: React.Ref<HTMLAnchorElement> | undefined,
+  ) => (
+    <NavLink
+      ref={ref}
+      to={props.to}
+      className={({ isActive }) => {
+        return `${props.className} ${isActive ? props.activeClassName : ''}`;
+      }}
+    >
+      {props.children}
+    </NavLink>
+  ),
+);
 
 export default function DrawerAppBar(props: Props) {
   const { window, children } = props;
@@ -38,17 +58,33 @@ export default function DrawerAppBar(props: Props) {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography variant='h6' sx={{ my: 2 }}>
-        MUI
-      </Typography>
+      <MuiLink component={Link} to='/'>
+        <Box maxWidth='60px' component='img' src={logo} />
+      </MuiLink>
       <Divider />
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
-          </ListItem>
+        {menus.map((item) => (
+          <MuiLink
+            fontSize='1.8rem'
+            underline='none'
+            component={CustomNavlink}
+            activeClassName='active'
+            to={`/${item.path}`}
+            key={item.path}
+            color='blackColor.main'
+            fontWeight={600}
+            sx={{
+              '&.active': {
+                color: 'primary.main',
+              },
+            }}
+          >
+            <ListItem key={item.path} disablePadding>
+              <ListItemButton sx={{ textAlign: 'center' }}>
+                <ListItemText primary={item.title} />
+              </ListItemButton>
+            </ListItem>
+          </MuiLink>
         ))}
       </List>
     </Box>
@@ -59,27 +95,56 @@ export default function DrawerAppBar(props: Props) {
   return (
     <Box>
       <CssBaseline />
-      <AppBar component='nav'>
-        <Toolbar>
-          <IconButton
-            color='inherit'
-            aria-label='open drawer'
-            edge='start'
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant='h6' component='div' sx={{ display: { xs: 'none', sm: 'block' } }}>
-            MUI
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}>
+      <AppBar
+        component='nav'
+        sx={{
+          background: 'white',
+        }}
+      >
+        <Toolbar
+          sx={{
+            background: 'linear-gradient(-90deg,#ddeefb,rgba(255,230,177,.1) 60%)',
+          }}
+        >
+          <MuiLink component={Link} to='/'>
+            <Box maxWidth='70px' component='img' src={logo} />
+          </MuiLink>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', lg: 'block' } }}>
             {menus.map((item) => (
-              <MuiLink component={Link} to={`/${item.path}`} key={item.path} color='#fff'>
+              <MuiLink
+                fontSize='1.8rem'
+                py={1}
+                mx={3}
+                underline='none'
+                component={CustomNavlink}
+                activeClassName='active'
+                to={`/${item.path}`}
+                key={item.path}
+                color='blackColor.main'
+                fontWeight={600}
+                borderBottom='4px solid'
+                borderColor='transparent'
+                sx={{
+                  '&.active': {
+                    color: 'primary.main',
+                    borderBottom: '4px solid',
+                    borderColor: 'secondary.main',
+                  },
+                }}
+              >
                 {item.title}
               </MuiLink>
             ))}
           </Box>
+          <IconButton
+            color='primary'
+            aria-label='open drawer'
+            edge='start'
+            onClick={handleDrawerToggle}
+            sx={{ ml: 'auto', display: { lg: 'none' }, justifySelf: 'flex-end' }}
+          >
+            <MenuIcon />
+          </IconButton>
         </Toolbar>
       </AppBar>
       <nav>
@@ -92,7 +157,7 @@ export default function DrawerAppBar(props: Props) {
             keepMounted: true, // Better open performance on mobile.
           }}
           sx={{
-            display: { xs: 'block', sm: 'none' },
+            display: { lg: 'block', xl: 'none' },
             '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
           }}
         >
@@ -100,7 +165,7 @@ export default function DrawerAppBar(props: Props) {
         </Drawer>
       </nav>
       <Box component='main'>
-        <Toolbar />
+        <Toolbar sx={{ minHeight: '80px !important' }} />
         {children}
       </Box>
     </Box>

@@ -17,7 +17,7 @@ const TourCard = ({ tour }: TourCardProps) => {
   for (const info of infos) {
     const { key, value } = info;
     infoItems.push(
-      <Box component='li'>
+      <Box component='li' key={key}>
         <Typography component='span'>{key}: </Typography>
         <Typography component='span'>{value}</Typography>
       </Box>,
