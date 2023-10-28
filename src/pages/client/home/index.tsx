@@ -13,18 +13,13 @@ export const Home = () => {
       <Container maxWidth='xl'>
         <OutstandingTours />
       </Container>
-      <Container maxWidth='xl'>
-        <AboutUs />
-      </Container>
+      <AboutUs />
       <Container maxWidth='xl'>
         <OutstadingImage />
       </Container>
-      <Container maxWidth='xl'>
-        <LinkedList />
-      </Container>
-      <Container maxWidth='xl'>
-        <OutstandingBlogs />
-      </Container>
+      <LinkedList />
+      <OutstandingBlogs />
+
       <Footer />
     </Box>
   );
