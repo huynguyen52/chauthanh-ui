@@ -165,7 +165,7 @@ export default function DrawerAppBar(props: Props) {
         </Drawer>
       </nav>
       <Box component='main'>
-        <Toolbar sx={{ minHeight: '80px !important' }} />
+        <Toolbar sx={{ minHeight: '76px !important' }} />
         {children}
       </Box>
     </Box>

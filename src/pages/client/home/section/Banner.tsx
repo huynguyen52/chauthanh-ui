@@ -41,8 +41,8 @@ export const Banner = () => {
     <Box
       sx={{
         '& .swiper-pagination-bullet': {
-          width: '40px',
-          height: '40px',
+          width: '74px',
+          height: '74px',
           borderRadius: '50%',
           overflow: 'hidden',
           border: '2px solid #fff',
