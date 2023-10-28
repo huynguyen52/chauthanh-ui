@@ -7,9 +7,7 @@ export const Home = () => {
   return (
     <Box>
       <Banner />
-      <Container maxWidth='xl'>
-        <CustomSlider />
-      </Container>
+      <CustomSlider />
       <Container maxWidth='xl'>
         <OutstandingTours />
       </Container>
