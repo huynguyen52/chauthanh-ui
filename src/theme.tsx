@@ -19,7 +19,15 @@ declare module '@mui/material/Button' {
 }
 
 const theme = createTheme({
-  components: {},
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: '10px',
+        },
+      },
+    },
+  },
   typography: {
     fontFamily: ['Noto Sans', 'sans-serif'].join(','),
     htmlFontSize: 10,

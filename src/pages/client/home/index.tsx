@@ -8,9 +8,7 @@ export const Home = () => {
     <Box>
       <Banner />
       <CustomSlider />
-      <Container maxWidth='xl'>
-        <OutstandingTours />
-      </Container>
+      <OutstandingTours />
       <AboutUs />
       <Container maxWidth='xl'>
         <OutstadingImage />

@@ -16,7 +16,7 @@ export const Title = (props: TitleProps) => {
         <Typography
           lineHeight={1.2}
           fontFamily='Lobster, sans-serif'
-          fontStyle='italic'
+          fontStyle={align === 'center' ? 'italic' : 'normal'}
           fontSize='2rem'
           color='secondary.main'
         >
