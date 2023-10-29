@@ -4,10 +4,12 @@ import { createTheme } from '@mui/material';
 declare module '@mui/material/styles' {
   interface Palette {
     blackColor: Palette['primary'];
+    white: Palette['primary'];
   }
 
   interface PaletteOptions {
     blackColor?: PaletteOptions['primary'];
+    white?: PaletteOptions['primary'];
   }
 }
 
@@ -15,6 +17,7 @@ declare module '@mui/material/styles' {
 declare module '@mui/material/Button' {
   interface ButtonPropsColorOverrides {
     blackColor: true;
+    white: true;
   }
 }
 
@@ -26,6 +29,15 @@ const theme = createTheme({
           borderRadius: '10px',
         },
       },
+      variants: [
+        {
+          props: { color: 'white' },
+          style: {
+            color: '#357960',
+            backgroundColor: '#ffffff',
+          },
+        },
+      ],
     },
   },
   typography: {
@@ -43,6 +55,9 @@ const theme = createTheme({
     },
     blackColor: {
       main: '#1d1d35',
+    },
+    white: {
+      main: '#ffffff',
     },
   },
 });

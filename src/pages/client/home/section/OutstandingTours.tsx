@@ -34,7 +34,7 @@ const TourCard = ({ tour }: TourCardProps) => {
         '&:hover': {
           p: '20px',
           backgroundColor: 'secondary.main',
-          color: 'white',
+          color: 'white.main',
         },
       }}
     >
@@ -141,9 +141,9 @@ export const OutstandingTours = () => {
             </Button>
           </Grid>
           <Grid item xs={12} lg={8}>
-            <Grid container spacing={3}>
+            <Grid container spacing={3} sx={{ border: '1px solid #eee', pb: '32px', pr: '32px', borderRadius: '20px' }}>
               {tourList.map((tour, index) => (
-                <Grid item xs={4} key={index}>
+                <Grid item xs={12} sm={6} md={4} key={index}>
                   <TourCard tour={tour} />
                 </Grid>
               ))}

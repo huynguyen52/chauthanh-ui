@@ -123,7 +123,7 @@ export const CustomSlider = () => {
               backgroundImage: `url(${leaf1}), url(${leaf2})`,
               backgroundRepeat: 'no-repeat',
               backgroundPosition: '0% 100%, 10% 100%',
-              color: 'white',
+              color: 'white.main',
               display: 'flex',
               flexDirection: {
                 xs: 'row',
@@ -146,7 +146,7 @@ export const CustomSlider = () => {
               <Typography fontSize='4.8rem' fontWeight={700}>
                 {currentSlide + 1}
               </Typography>
-              <Divider sx={{ borderBottomWidth: 'medium', borderColor: 'white', m: 0 }} light variant='middle' />
+              <Divider sx={{ borderBottomWidth: 'medium', borderColor: 'white.main', m: 0 }} light variant='middle' />
               <Typography fontSize='4.8rem' fontWeight={700}>
                 {imgList.length - slidePerView + 1}
               </Typography>
