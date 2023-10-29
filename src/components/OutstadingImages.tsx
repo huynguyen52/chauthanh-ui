@@ -1,6 +1,6 @@
-import { Container, IconButton, ImageList, ImageListItem, ImageListItemBar } from '@mui/material';
+import { Title } from '@/components/Title';
+import { Button, Container, ImageList, ImageListItem, ImageListItemBar, Stack } from '@mui/material';
 import { Box } from '@mui/system';
-import InfoIcon from '@mui/icons-material/Info';
 
 const itemData = [
   {
@@ -34,33 +34,6 @@ const itemData = [
     rows: 2,
     cols: 2,
   },
-  {
-    img: 'https://images.unsplash.com/photo-1516802273409-68526ee1bdd6',
-    title: 'Basketball',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1518756131217-31eb79b20e8f',
-    title: 'Fern',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1597645587822-e99fa5d45d25',
-    title: 'Mushrooms',
-    rows: 2,
-    cols: 2,
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1567306301408-9b74779a11af',
-    title: 'Tomato basil',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1471357674240-e1a485acb3e1',
-    title: 'Sea star',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1589118949245-7d38baf380d6',
-    title: 'Bike',
-    cols: 2,
-  },
 ];
 
 function srcset(image: string, size: number, rows = 1, cols = 1) {
@@ -72,21 +45,29 @@ function srcset(image: string, size: number, rows = 1, cols = 1) {
 
 export const OutstadingImage = () => {
   return (
-    <Box>
+    <Box my={12}>
       <Container maxWidth='xl'>
-        <Box>OutstadingImage</Box>
-        <ImageList sx={{ height: 450 }} variant='quilted' cols={4} rowHeight={121}>
+        <Stack mb={{ md: 9, xs: 4 }} direction='row' alignItems='flex-end' justifyContent='space-between'>
+          <Title title='Hình ảnh đặc sắc' sub='Hình ảnh' align='left' />
+          <Button variant='contained' color='primary'>
+            Xem tất cả
+          </Button>
+        </Stack>
+        <ImageList variant='quilted' cols={4} rowHeight={121}>
           {itemData.map((item) => (
-            <ImageListItem key={item.img} cols={item.cols || 1} rows={item.rows || 1}>
+            <ImageListItem
+              sx={{ borderRadius: '20px', overflow: 'hidden' }}
+              key={item.img}
+              cols={item.cols || 1}
+              rows={item.rows || 1}
+            >
               <img {...srcset(item.img, 121, item.rows, item.cols)} alt={item.title} loading='lazy' />
               <ImageListItemBar
+                sx={{
+                  background: 'linear-gradient(0deg, rgba(244,189,26,1) 0%, rgba(2,0,36,0.17552958683473385) 71%)',
+                  fontWeight: 500,
+                }}
                 title={item.title}
-                subtitle={item.author}
-                actionIcon={
-                  <IconButton sx={{ color: 'rgba(255, 255, 255, 0.54)' }} aria-label={`info about ${item.title}`}>
-                    <InfoIcon />
-                  </IconButton>
-                }
               />
             </ImageListItem>
           ))}
