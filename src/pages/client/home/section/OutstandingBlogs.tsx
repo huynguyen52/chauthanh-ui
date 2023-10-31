@@ -1,22 +1,58 @@
-import { Container, Grid as MuiGrid, Typography } from '@mui/material';
+import {
+  Button,
+  Container,
+  Grid as MuiGrid,
+  List,
+  ListItemButton,
+  ListItemText,
+  ListSubheader,
+  Stack,
+  Typography,
+} from '@mui/material';
 import { Box } from '@mui/system';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Grid, Pagination } from 'swiper/modules';
-
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/grid';
 import 'swiper/css/pagination';
+import { Title } from '@/components/Title';
 
-// import required modules
 export const OutstandingBlogs = () => {
   return (
     <Box>
       <Container maxWidth='xl'>
-        <Typography>Blogs</Typography>
+        <Stack direction='row' justifyContent='space-between'>
+          <Title title='Blogs' align='left' />
+          <Button variant='contained' color='primary'>
+            Xem tất cả
+          </Button>
+        </Stack>
         <MuiGrid container>
           <MuiGrid item xs={3}>
-            <Typography>list</Typography>
+            <List
+              component='nav'
+              subheader={
+                <ListSubheader component='div'>
+                  <Typography fontSize='1.4rem' fontWeight={700} color='#92A143'>
+                    Danh mục
+                  </Typography>
+                </ListSubheader>
+              }
+            >
+              <ListItemButton>
+                <ListItemText
+                  sx={{
+                    ml: 1.5,
+                    '& span': {
+                      fontSize: '1.6rem',
+                      fontWeight: 600,
+                    },
+                  }}
+                  primary='Sent mail'
+                />
+              </ListItemButton>
+            </List>
           </MuiGrid>
           <MuiGrid item xs={9}>
             <Box
