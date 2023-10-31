@@ -7,3 +7,5 @@ export * from './Video';
 export * from './Hero';
 export * from './BannerTitle';
 export * from './ClientCard';
+export * from './SlideCard';
+export * from './BlogCard';

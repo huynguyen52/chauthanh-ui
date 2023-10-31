@@ -1,4 +1,16 @@
-import { Card, CardContent, CardMedia, Divider, Grid, Stack, Typography, useMediaQuery } from '@mui/material';
+import img4 from '@/assets/buoi.jpeg';
+import img3 from '@/assets/cathaclac.jpeg';
+import img5 from '@/assets/chanh.jpeg';
+import img1 from '@/assets/dualuoi.jpeg';
+import leaf1 from '@/assets/leaf1.svg';
+import leaf2 from '@/assets/leaf2.svg';
+import img2 from '@/assets/mit.jpeg';
+import img6 from '@/assets/xoai.png';
+import { SlideCard } from '@/components';
+import { Title } from '@/components/Title';
+import ArrowCircleLeftOutlinedIcon from '@mui/icons-material/ArrowCircleLeftOutlined';
+import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined';
+import { Divider, Grid, Stack, Typography, useMediaQuery } from '@mui/material';
 import { Box } from '@mui/system';
 import { useEffect, useState } from 'react';
 import type { Swiper as SwiperType } from 'swiper';
@@ -6,17 +18,6 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import img1 from '@/assets/dualuoi.jpeg';
-import img2 from '@/assets/mit.jpeg';
-import img3 from '@/assets/cathaclac.jpeg';
-import img4 from '@/assets/buoi.jpeg';
-import img5 from '@/assets/chanh.jpeg';
-import img6 from '@/assets/xoai.png';
-import leaf1 from '@/assets/leaf1.svg';
-import leaf2 from '@/assets/leaf2.svg';
-import ArrowCircleLeftOutlinedIcon from '@mui/icons-material/ArrowCircleLeftOutlined';
-import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined';
-import { Title } from '@/components/Title';
 
 const imgList = [
   {
@@ -44,25 +45,6 @@ const imgList = [
     img: img6,
   },
 ];
-
-interface SlideCardProps {
-  img: string;
-  title: string;
-  center?: boolean;
-}
-
-const SlideCard = ({ img, title, center }: SlideCardProps) => {
-  return (
-    <Card elevation={3} sx={{ maxWidth: 300, border: 'none', borderRadius: '20px', mx: center ? 'auto' : 'none' }}>
-      <CardMedia sx={{ height: 250 }} image={img} title='green iguana' />
-      <CardContent sx={{ backgroundColor: '#F3F3F3', borderBottomRightRadius: '20px', borderBottomLeftRadius: '20px' }}>
-        <Typography fontWeight={700} fontSize='2rem' variant='h5' component='div'>
-          {title}
-        </Typography>
-      </CardContent>
-    </Card>
-  );
-};
 
 const PANEL_PADDING = 100;
 
