@@ -12,7 +12,6 @@ export const Home = () => {
       <OutstadingImage />
       <LinkedList />
       <OutstandingBlogs />
-
       <Footer />
     </Box>
   );
