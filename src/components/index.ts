@@ -6,3 +6,4 @@ export * from './OutstadingImages';
 export * from './Video';
 export * from './Hero';
 export * from './BannerTitle';
+export * from './ClientCard';
