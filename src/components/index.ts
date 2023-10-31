@@ -5,3 +5,4 @@ export * from './LinkedList';
 export * from './OutstadingImages';
 export * from './Video';
 export * from './Hero';
+export * from './BannerTitle';
