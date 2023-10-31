@@ -9,3 +9,4 @@ export * from './BannerTitle';
 export * from './ClientCard';
 export * from './SlideCard';
 export * from './BlogCard';
+export * from './Title';

@@ -16,7 +16,7 @@ import { Grid, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/grid';
 import 'swiper/css/pagination';
-import { Title } from '@/components/Title';
+import { Title } from '@/components';
 
 export const OutstandingBlogs = () => {
   return (

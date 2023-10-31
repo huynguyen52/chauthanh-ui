@@ -5,7 +5,7 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import { Title } from '@/components/Title';
+import { Title } from '@/components';
 import banner1 from '@/assets/website-1.png';
 import banner2 from '@/assets/website-2.jpeg';
 import banner3 from '@/assets/website-3.png';

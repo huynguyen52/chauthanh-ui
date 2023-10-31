@@ -4,7 +4,7 @@ import img1 from '@/assets/thuvien-banner.jpeg';
 import background from '@/assets/rectangle_9.png';
 import logo1 from '@/assets/logo_1.svg';
 import logo2 from '@/assets/logo_2.svg';
-import { Title } from '@/components/Title';
+import { Title } from '@/components';
 import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
 
 export const AboutUs = () => {

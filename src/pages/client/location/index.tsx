@@ -1,14 +1,16 @@
-import { Banner, Footer } from '@/components';
+import { Banner, Footer, OutstadingImage } from '@/components';
 import { Box } from '@mui/system';
-import { LocationCategory, OutStadingSpecialty, Resort } from './section';
+import { LocationCategory, Resort } from './section';
 import banner from '@/assets/banner_locations.png';
+import { OutstandingFoods } from '../home/section';
 
 export const Location = () => {
   return (
     <Box>
       <Banner title='Địa điểm' src={banner} />
       <LocationCategory />
-      <OutStadingSpecialty />
+      <OutstadingImage />
+      <OutstandingFoods />
       <Resort />
       <Footer />
     </Box>

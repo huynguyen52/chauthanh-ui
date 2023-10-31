@@ -1,5 +1,4 @@
-import { BlogCard, SlideCard } from '@/components';
-import { Title } from '@/components/Title';
+import { BlogCard, SlideCard, Title } from '@/components';
 import { Container, Grid } from '@mui/material';
 import { Box } from '@mui/system';
 import vuichoi from '@/assets/vuichoi.png';

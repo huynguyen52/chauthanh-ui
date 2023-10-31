@@ -1,6 +1,6 @@
 import { Container, Typography } from '@mui/material';
 import { Box } from '@mui/system';
-import { Title } from '@/components/Title';
+import { Title } from '@/components';
 
 export const Hero = () => {
   return (

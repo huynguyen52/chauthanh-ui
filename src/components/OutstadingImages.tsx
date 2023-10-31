@@ -1,4 +1,4 @@
-import { Title } from '@/components/Title';
+import { Title } from '@/components';
 import { Button, Container, ImageList, ImageListItem, ImageListItemBar, Stack } from '@mui/material';
 import { Box } from '@mui/system';
 
